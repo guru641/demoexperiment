@@ -1,0 +1,227 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body style="background-color:red;margin-right:700px;margin-left:200px; height:200px;">
+
+    <form action="justinsert" method="get">
+
+
+
+        <br>
+        <br>
+        <b>user id:</b>
+        <input type="text" id="userid" name="userid" value="">
+        <span id="iderror"> </span>
+
+        <br>
+        <br>
+        <b>user name:</b>
+        <input type="text" id="uname" name="uname" value="">
+        <span id="uerror"> </span>
+
+        <br>
+        <br>
+        <b>pass word:</b>
+        <input type="password" id="pword" name="pword" value="">
+        <span id="perror"> </span>
+
+        <br>
+        <br>
+        <b>email id:</b>
+        <input type="text" id="email_id" name="email_id" value="">
+        <span id="eerror"> </span>
+
+
+        <br>
+        <br>
+        <b>phone no:</b>
+        <input type="text" id="phoneno" name="phoneno"value="">
+        <span id="pnerror"> </span>
+
+        <br>
+        <br>
+        <b>address</b>
+        <input type="text" id="address" name="address" value="">
+        <span id="aerror"> </span>
+        <br>
+
+        <br>
+        <input style="margin-left: 5400 px"  type="submit" name="submit" value="submit">
+
+
+    </form>
+    <script>
+
+        function show() {
+
+                          var count = 1;
+            var uname = document.getElementById("uname").value;
+
+            var pword = document.getElementById("pword").value;
+
+            var email_id = document.getElementById("email_id").value;
+
+            var user_id = document.getElementById("userid").value;
+
+            var phone_no = document.getElementById("phoneno").value;
+
+            var address = document.getElementById("address").value;
+
+            if (uname == "") {
+               var count = 0;
+                document.getElementById("uerror").innerHTML = "!user name should not be empty..";
+
+
+            }
+            else {
+                //var count = 0;
+                var str = uname;
+                var patt1 = /[0-9]/;
+                var result = str.match(patt1);
+                if (result != null) {
+                    var count = 0;
+                    document.getElementById("uerror").innerHTML = "!user name should not contain numbers";
+
+
+                }
+
+            }
+
+
+
+
+            if (user_id == "") {
+                var count = 0;
+                document.getElementById("iderror").innerHTML = "!user id should not be empty..";
+
+
+            }
+            else {
+
+              var  count=1;
+                // count = 0;
+                // var str = user_id;
+                // var patt1 = /^[0-9]$/;
+                // var result = str.match(patt1);
+                // if (result != null) {
+                //     count = 0;
+                //     document.getElementById("iderror").innerHTML = "!user id should only contain numbers";
+
+
+                // }
+            }
+
+
+
+            if (phone_no == "") {
+                var count = 0;
+                document.getElementById("pnerror").innerHTML = "!phone number should not be empty..";
+
+
+            }
+            else {
+                var count=1;
+                // count = 0;
+                // var str = phone_no;
+                // var patt1 = /[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/;
+                // var result = str.match(patt1);
+                // if (result != null) {
+                //     count = 0;
+                //     document.getElementById("pnerror").innerHTML = "!phone should contain ten characters only";
+
+
+                // }
+            }
+
+            if (pword == "") {
+                var count = 0;
+                document.getElementById("perror").innerHTML = "password should not be empty";
+
+            }
+            else {
+               // var count = 0;
+                var str = pword;
+                var patt1 = /^[0-9a-z_-]+[5,18]*$/;
+                var result = str.match(patt1);
+                if (result != null) {
+                    var count = 0;
+                    document.getElementById("perror").innerText = "!password should contain one alphabet,one digit,one speciel character should be atleast 5 characters in length";
+
+
+                }
+
+            }
+
+
+            if (email_id == "") {
+
+               var count = 0;
+                document.getElementById("eerror").innerHTML = "email id should not be empty";
+
+            }
+            else {
+
+              // var count = 0;
+                var str = email_id;
+                var patt1 = /^[a-z]+$/;
+                var result = str.match(patt1);
+                if (result != null) {
+                   var count = 0;
+                    document.getElementById("eerror").innerHTML = "!email should contain atleast 5 characters in length";
+
+
+                }
+
+            }
+
+            if (address == "") {
+
+               var count = 0;
+                document.getElementById("aerror").innerHTML = "address should not be empty";
+
+            }
+
+            if (count == 1) {
+
+                  alert('valid data');
+
+                   req.render('justinsert');
+
+
+                // var Db = require('mysql-activerecord');
+                // var db = new Db.Adapter({
+                //     server: 'localhost',
+                //     username: 'root',
+                //     password: '',
+                //     database: 'training',
+                //     reconnectTimeout: 2000
+
+                // });
+
+                // function a(cb) {
+                //     return db.query('select * from usersdata', (err, data) => {
+                //         console.log('===========', err)
+                //          console.log('inside===========',data);
+                //         cb(err, data);
+                //     })
+                // }
+                // a((err, data) => {
+                //     console.log('inside==========', err, data);
+                // });
+            }
+            else{
+                alert('invalid data');
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

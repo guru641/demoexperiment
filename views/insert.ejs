@@ -1,0 +1,25 @@
+var Db = require('mysql-activerecord');
+var db = new Db.Adapter({
+	server: 'localhost',
+	username: 'root',
+	password: '',
+  database: 'training',
+  reconnectTimeout: 2000
+
+});
+console.log('=========',db);
+// db.query('select * from usersdata',(err,data)=>{
+//   console.log('===========',err)
+//   console.log('===========',data);
+// })
+// let a;
+function a(cb){
+ return db.query('select * from usersdata' ,(err,data)=>{
+    console.log('===========',err)
+    // console.log('===========',data);
+  cb(err,data);
+  })
+}
+a((err,data)=>{
+console.log('==========',err,data);
+});

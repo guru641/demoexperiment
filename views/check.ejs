@@ -1,0 +1,42 @@
+
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style="background-color:red;margin-right:700px;margin-left:200px; height:200px;">
+     
+    
+    <h1>Welcome to <%= username %>!!!</h1>
+    
+
+     <table style="width:100%" border="10 px">
+            <tr>
+              <th>udser id</th>
+              <th>user name</th> 
+              <th>password</th>
+              <th>phone no</th>
+              <th>email id</th>
+              <th>address</th>
+              
+            </tr>
+            <tr>
+              <td><%= userid %></td>
+              <td><%= username %></td> 
+              <td><%= password %></td>
+              <td><%= phoneno %></td>
+              <td><%= emailid %></td> 
+              <td><%= address %></td>
+              
+            </tr>
+           
+          </table>
+
+<form action="logout" method="get">
+
+
+<br> <br><input type="submit" name="submit" value="logout">
+
+</form>
+   
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: aqua;
+            font-size: 18px;
+            font-family: Comic Sans MS;
+            text-align: center;
+        }
+
+        #buttonstyle {
+            background-color: green;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            border-radius: 40px;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 450px;
+            color: green;
+            font-weight: bold;
+            border: 5px solid red;
+            border-radius: 40px;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+
+        #left {
+            height: 50%;
+            width: 50%;
+            position: fixed;
+            margin-left: 650;
+            background-color: gray;
+        }
+
+        #right {
+            height: 50%;
+            width: 50%;
+            position: fixed;
+            margin-right: 0;
+            margin-bottom: 5500px;
+            background-color: red;
+        }
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    </style>
+
+</head>
+
+<body>
+    <div id="left">
+
+       
+        <p>
+
+            <span id="demo">result will appear here </span>
+            <br/>
+            <br/>
+            <input onclick="gotologin()" type="button" id="buttonstyle" value="click this button">
+
+            <script type="text/javascript">
+
+                var newURL = window.location.href;
+                var url = new URL(newURL);
+                var c = url.searchParams.get("name");
+                var d = url.searchParams.get("password");
+                if (c == "guru" && d == 123) {
+
+                    document.getElementById("demo").innerHTML = c + "..you are a valid user...your password is=" + d;
+                }
+                else {
+                     alert("invalid user name or password");
+                     window.location = "http://localhost:4000/login";
+
+                    setTimeout(function () {
+                        document.getElementById("demo").innerHTML = "you are not a valid user We are redirecting back....!";
+                    }, 6000);
+
+                }
+
+
+
+                function gotologin() {
+
+
+                    setTimeout(function () {
+                        window.location = "http://localhost:8000/login";
+                    }, 8000);
+                    
+
+                }
+
+
+            </script>
+        </p>
+
+        <p> welcome to organisation </p>
+
+    </div>
+
+    <div id="right">
+
+        
+
+
+<div class="dropdown">
+  <button  style="margin-right: 0"  class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="http://localhost:8000/update">Update profile</a>
+    <a href="http://localhost:8000/view">View profile</a>
+    <a href="http://localhost:8000/login">Logout</a>
+  </div>
+</div>
+<div style="margin-top: 200"><marquee>welcome to our organisation</marquee></div>
+    </div>
+</div>
+
+<marquee style="margin-top: 400">welcome to our organisation</marquee></div>
+ 
+</body>
+
+
+</html>
